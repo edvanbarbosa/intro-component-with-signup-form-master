@@ -1,5 +1,18 @@
 @charset "UTF-08";
 
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+:root{
+    /* colors */
+    --red: hsl(0, 100%, 74%);
+    --green: hsl(154, 59%, 51%);
+    --blue: hsl(248, 32%, 49%);
+    --dark-blue: hsl(249, 10%, 26%);
+    --grayish-blue: hsl(246, 25%, 77%);
+
+    /* font */
+    --poppins:  'Poppins', sans-serif;
+}
 *{
     margin: 0;
     padding: 0;
@@ -14,4 +27,195 @@ main{
     align-items: center;
     height: 100%;
     width: 100%;
+    background: var(--red) url('images/bg-intro-desktop.png');
+}
+section{
+    width: 50%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container{
+    display: flex;
+    flex-direction: column;
+}
+.title-and-description > .container{
+    width: 70%;
+    height: 100%;
+    justify-content: center;
+    gap: 1em;
+}
+h1{
+    font-size: 3rem;
+    font-weight: 700;
+    color: white;
+    line-height: 1.2em;
+    font-family: var(--poppins);
+    transform: translateY(100%);
+    opacity: .4;
+    animation: 1s titleTransition ease-in-out forwards;
+}
+.title-and-description p{
+    font-weight: 400;
+    color: white;
+    line-height: 1.5em;
+    font-family: var(--poppins);
+    transform: translateY(200%);
+    opacity: .3;
+    animation: 1s titleTransition ease-in-out forwards;
+}
+.actions > .container{
+    width: 70%;
+    height: 100%;
+    justify-content: center;
+    gap: 2em;
+}
+.offer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1em;
+    padding: 1em;
+    border-radius: 8px;
+    background-color: var(--blue);
+    box-shadow: 0px 5px 0px .5px rgba(0, 0, 0, 0.111);
+    transform: translateX(100%);
+    opacity: .3;
+    animation: 1s actionsTransition ease-in-out forwards;
+    
+}
+.offer p {
+    font-size: 1rem;
+    font-weight: 400;
+    color: white;
+    font-family: var(--poppins);
+}
+.offer span{
+    font-weight: 700;
+}
+.form-container{
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    width: 100%;
+    height: 60%;
+    border-radius: 8px;
+    background-color: #fff;
+    box-shadow: 0px 5px 0px .2px rgba(0, 0, 0, 0.111);
+    padding: 2em;
+    transform: translateX(120%);
+    opacity: .3;
+    animation: 1s actionsTransition ease-in-out forwards;
+}
+form{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 1em;
+    width: 100%;
+    height: 100%;
+}
+input[type="text"], input[type="email"], input[type="password"]{
+    width: 100%;
+    height: 20%;
+    padding: .5em;
+    border-radius: 3px;
+    border: 1px solid var(--grayish-blue);
+    font-family: var(--poppins);
+    font-weight: 600;
+    color: var(--dark-blue);
+    transition: .3s ease-in-out;
+}
+input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focus{
+    outline: none;
+    border: 1px solid var(--blue);
+    color: var(--blue);
+}
+input[type="submit"]{
+    width: 100%;
+    height: 20%;
+    padding: .5em;
+    border-radius: 3px;
+    border: none;
+    box-shadow: 0px 3px 0px 1px rgba(0, 0, 0, 0.153);
+    font-family: var(--poppins);
+    background-color: var(--green);
+    font-weight: 600;
+    font-size: 1.05em;
+    color: white;
+    transition: .3s ease-in-out;
+}
+input[type="submit"]:hover{
+    cursor: pointer;
+    opacity: .8;
+
+}
+.terms-and-conditions{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: .5em;
+    font-family: var(--poppins);
+    font-weight: 400;
+    color: var(--grayish-blue);
+    font-size: .8em;
+}
+.terms-and-conditions a{
+    text-decoration: none;
+    color: var(--red);
+    font-weight: 600;
+}
+
+@media  screen and (max-width: 900px) {
+    main{
+        flex-direction: column;
+        background-image: url(images/bg-intro-mobile.png);
+        padding: 1em;
+    }
+    section{
+        width: 100%;
+        height: 50%;
+    }
+    .actions{
+        height: 65%;
+    }
+    h1{
+        font-size: 1.8em;
+        text-align: center;
+        transform: translateY(-200%);
+    }
+    .title-and-description p{
+        transform: translateY(-100%);
+        text-align: center;
+        font-size: .9em;
+    }
+    .actions > .container{
+        gap: 1em;
+    }
+    .form-container{
+        height: 80%;
+        padding: 1em;
+        transform: translateX(-140%);
+    }
+    .terms-and-conditions{
+        font-size: .5em;
+    }
+    .offer p{
+        font-size: .8em;
+    }
+}
+
+@keyframes titleTransition{
+ 100%{
+        transform: translateY(0%);
+        opacity: 1;
+ }
+}
+@keyframes actionsTransition{
+    100%{
+           transform: translateX(0%);
+           opacity: 1;
+    }
 }
