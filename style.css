@@ -181,6 +181,9 @@ input[type="submit"]:hover{
     .actions{
         height: 65%;
     }
+    .title-and-description{
+        height: 35%;
+    }
     h1{
         font-size: 1.8em;
         text-align: center;
@@ -201,6 +204,9 @@ input[type="submit"]:hover{
     }
     .terms-and-conditions{
         font-size: .5em;
+    }
+    .actions > .container{
+        width: 90%;
     }
     .offer p{
         font-size: .8em;
